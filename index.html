@@ -10,9 +10,14 @@
 
   <script src="js/jquery-1.9.1.js"></script>
   <script src="js/jquery.xml2json.js"></script>
-  <script src="js/core.js"></script>
+  <script src="js/jquery.srjobs.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $("#list-jobs").smartRecruiterJobs();
+    });
+  </script>
 
   <body>
-    <ul id="list-jobs"></ul>
+    <div id="list-jobs"></div>
   </body>
 </html>
