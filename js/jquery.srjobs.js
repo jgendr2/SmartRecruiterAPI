@@ -1,8 +1,8 @@
 // get all jobs from your SR account
 function getJobs(url) {
   // SET THESE TWO VARIABLES
-  var srCompanyName = "AvantCredit1";
-  var srInstalledURL = "http://avantcredit.com/about_us";
+  var srCompanyName = "___";
+  var srInstalledURL = "___";
 
   return $.ajax({
     url: url,
