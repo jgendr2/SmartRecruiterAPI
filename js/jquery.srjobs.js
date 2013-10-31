@@ -1,8 +1,8 @@
 // get all jobs from your SR account
 function getJobs(url) {
-  // SET THESE TWO VARIABLES
-  var srCompanyName = "___";
-  var srInstalledURL = "___";
+  // SET THESE TWO VARIABLES!
+  var srCompanyName = "";
+  var srInstalledURL = "";
 
   return $.ajax({
     url: url,
@@ -58,11 +58,10 @@ function groupJobsInDepartments(departmentsObj, result) {
       
       // loop through the associated job results object and display it
       $.each(groupedJobs, function(index, value) {
-        console.log(index, value);
         if (value.length > 0) {
           el.append($('<h4>' + index + '</h4>'));
           $.each(value, function(index, value) {
-            el.append('<li>' + value.title + '</li>');
+            el.append('<li><a href=' + value.detail_url + ' target="_blank">' + value.title + '</a></li>');
           });
         };
       });
