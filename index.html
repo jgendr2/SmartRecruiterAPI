@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <meta charset="utf-8">
@@ -8,12 +6,12 @@
   <meta name="author" content="">
   <title></title>
 
-  <script src="js/jquery-1.9.1.js"></script>
-  <script src="js/jquery.xml2json.js"></script>
-  <script src="js/jquery.srjobs.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="lib/jquery.xml2json.js"></script>
+  <script src="lib/jquery.smartRecruiters.js"></script>
   <script type="text/javascript">
     $(function() {
-      $("#list-jobs").smartRecruiterJobs();
+      $("#list-jobs").smartRecruiters({ companyName: "AvantCredit1", pageUrl: "https://www.avantcredit.com/about_us" });
     });
   </script>
 
