@@ -1,6 +1,5 @@
-## SmartRecruiter JQuery API
-
-All references to SmartRecruiter belong to them.
+## SmartRecruiters jQuery Plugin
+All references to SmartRecruiters belong to them.
 
 This is a JQuery plugin you can use to display a more customized SmartRecruiters widget on your website.
 
