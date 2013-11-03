@@ -1,6 +1,6 @@
 (($) ->
   $.fn.smartRecruiters = (options) ->
-  	defaults = 
+    defaults = 
       pageUrl: window.location.href
       departmentHtmlElement: 'h4'
     options = $.extend {}, defaults, options
@@ -13,17 +13,10 @@
         installed_url: options.pageUrl
       contentType: "application/jsonp; charset=utf-8"
     ).done (data) =>
-      result = $.xml2json data
       jobsByDepartment = {}
-      for job in result.jobs.job
-        if job.department isnt ""
-          jobsByDepartment[job.department] ||= []
-          jobsByDepartment[job.department].push job
-      output = ""
+      for job in $.xml2json(data).jobs.job
+        (jobsByDepartment[job.department] ||= []).push job if job.department isnt ""
       for department, jobs of jobsByDepartment
-        output += $(document.createElement(options.departmentHtmlElement)).text(department)[0].outerHTML
-        output += "<ul>"
-        output += "<li><a href='#{job.detail_url}' target='_blank'>#{job.title}</a></li>" for job in jobs
-        output += "</ul>"
-      $(@).append output  
+        ul = $("<ul>").append($("<li>").append($("<a>").attr(href: job.detail_url, target: '_blank').text(job.title)) for job in jobs)
+        $("<#{options.departmentHtmlElement}>").text(department).after(ul).appendTo(@)
 ) jQuery
